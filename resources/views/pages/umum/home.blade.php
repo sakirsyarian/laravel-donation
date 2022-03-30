@@ -144,7 +144,7 @@
                                 <!--end::Label-->
                                 <!--begin::Action-->
                                 <a href="{{ route('detail_donasi', $program->id) }}"
-                                    class="btn btn-sm btn-primary  {{ $program->batas_akhir == now()->format('Y-m-d') || $program->target == $program->jumlah_terkumpul  ? 'd-none' : '' }}">Donasi</a>
+                                    class="btn btn-sm btn-primary  {{ $program->batas_akhir == now()->format('Y-m-d') || $program->jumlah_terkumpul >= $program->target ? 'd-none' : '' }}">Donasi</a>
                                 <!--end::Action-->
                             </div>
                             <!--end::Text-->
