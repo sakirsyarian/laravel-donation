@@ -52,22 +52,22 @@ class HomeController extends Controller
 
     public function kirimDonasi(Request $request, $id)
     {
-        // $program = Program::find($id);
+        $program = Program::find($id);
 
-        /* $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'donatur_nominal_donasi' => 'required',
             'donatur_vendor_rekening' => 'required',
             'donatur_rekening' => 'required',
             'donatur_nama_pengirim' => 'required',
             'donatur_atas_nama' => 'required',
             'donatur_email' => 'required',
-        ]); */
+        ]);
 
-        /* if ($validator->fails()) {
+        if ($validator->fails()) {
             return redirect()->route('detail_donasi', $program->id)->with(session()->flash('alert-warning', 'Maaf, data Anda kurang lengkap'));
-        } */
+        }
 
-        /*  $rekening = Rekening::where('nomor_rekening', '=', $request->donatur_rekening)->first();
+        $rekening = Rekening::where('nomor_rekening', '=', $request->donatur_rekening)->first();
         if ($rekening == null) {
             $rekening = new Rekening();
             $rekening->id_vendor = $request->donatur_vendor_rekening;
@@ -77,9 +77,9 @@ class HomeController extends Controller
             $rekening->inserted_at = Carbon::now();
             $rekening->inserted_by = 1;
             $rekening->save();
-        } */
+        }
 
-        /*  $programDonatur = new ProgramDonatur();
+        $programDonatur = new ProgramDonatur();
         $programDonatur->id_program = $program->id;
         $programDonatur->nominal_donasi = $request->donatur_nominal_donasi;
         $programDonatur->id_rekening = $rekening->id;
@@ -94,102 +94,12 @@ class HomeController extends Controller
         $programDonatur->inserted_by = 1;
         $programDonatur->edited_at = Carbon::now();
         $programDonatur->edited_by = 1;
-        $programDonatur->save(); */
+        $programDonatur->save();
 
-        // $program->jumlah_terkumpul += $programDonatur->nominal_donasi;
-        // $program->save();
+        $program->jumlah_terkumpul += $programDonatur->nominal_donasi;
+        $program->save();
 
-        // return redirect()->route('detail_donasi', $program->id)->with(session()->flash('alert-success', 'Terima kasih, donasi Anda akan segera disalurkan'));
-
-        $program = Program::find($id);
-
-        \DB::transaction(function () use ($request, $program) {
-            $programDonatur = ProgramDonatur::create([
-                'id_program' => $program->id,
-                'transaction_id' => \Str::uuid(),
-                'nama_pengirim' => $request->donatur_nama_pengirim,
-                'email' => $request->donatur_email,
-                'telepon' => $request->donatur_telepon,
-                'nominal_donasi' => $request->donatur_nominal_donasi,
-                'pesan' => $request->donatur_pesan,
-                'status_verifikasi' => "menunggu verifikasi",
-                'status_donasi' => "proses penghimpunan",
-                'inserted_at' => Carbon::now()->format('d-m-Y'),
-                'inserted_by' => 2,
-                'edited_at' => Carbon::now(),
-                'edited_by' => 2,
-            ]);
-
-            $payload = [
-                'transaction_details' => [
-                    'order_id'      => $programDonatur->id_transaction,
-                    'gross_amount'  => $programDonatur->nominal_donasi,
-                ],
-                'customer_details' => [
-                    'first_name'    => $programDonatur->nama_pengirim,
-                    'email'         => $programDonatur->email,
-                    'phone'         => $programDonatur->telepon,
-                    // 'address'       => '',
-                ],
-                'item_details' => [
-                    [
-                        'id'       => $programDonatur->id_program,
-                        'price'    => $programDonatur->nominal_donasi,
-                        'quantity' => 1,
-                        'name'     => $request->donatur_jenis_donasi,
-                    ]
-                ]
-            ];
-            $snapToken = \Midtrans\Snap::getSnapToken($payload);
-            $programDonatur->snap_token = $snapToken;
-            $programDonatur->save();
-
-            $this->response['snap_token'] = $snapToken;
-        });
-
-        return response()->json($this->response);
-    }
-
-    public function notifikasi(Request $request)
-    {
-        $notif = new \Midtrans\Notification();
-
-        \DB::transaction(function () use ($notif) {
-
-            $transaction = $notif->transaction_status;
-            $type = $notif->payment_type;
-            $orderId = $notif->order_id;
-            $fraud = $notif->fraud_status;
-            $donation = Donation::where('transaction_id', $orderId)->first();
-
-            if ($transaction == 'capture') {
-                if ($type == 'credit_card') {
-
-                    if ($fraud == 'challenge') {
-                        $donation->setStatusPending();
-                    } else {
-                        $donation->setStatusSuccess();
-                    }
-                }
-            } elseif ($transaction == 'settlement') {
-
-                $donation->setStatusSuccess();
-            } elseif ($transaction == 'pending') {
-
-                $donation->setStatusPending();
-            } elseif ($transaction == 'deny') {
-
-                $donation->setStatusFailed();
-            } elseif ($transaction == 'expire') {
-
-                $donation->setStatusExpired();
-            } elseif ($transaction == 'cancel') {
-
-                $donation->setStatusFailed();
-            }
-        });
-
-        return;
+        return redirect()->route('detail_donasi', $program->id)->with(session()->flash('alert-success', 'Terima kasih, donasi Anda akan segera disalurkan'));
     }
 
     public function daftarBerita($id)

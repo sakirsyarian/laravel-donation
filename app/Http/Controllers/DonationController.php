@@ -22,7 +22,6 @@ class DonationController extends Controller
 
     public function index()
     {
-        // $program = Program::find($id);
         $donations = Donation::orderBy('id', 'desc')->paginate(8);
         return view('welcome', compact('donations'));
     }
@@ -37,7 +36,6 @@ class DonationController extends Controller
 
         \DB::transaction(function () use ($request) {
             $donation = Donation::create([
-                // 'program_id' => $program->id,
                 'transaction_id' => \Str::uuid(),
                 'donor_name' => $request->donor_name,
                 'donor_email' => $request->donor_email,
@@ -45,8 +43,6 @@ class DonationController extends Controller
                 'donation_type' => $request->donation_type,
                 'amount' => $request->amount,
                 'note' => $request->note,
-                // 'target' => $request->target,
-                // 'total_amount' => $request->total_amount + $request->amount,
             ]);
 
             $payload = [
@@ -84,7 +80,6 @@ class DonationController extends Controller
 
         \DB::transaction(function () use ($request) {
             $donation = Donation::create([
-                // 'program_id' => $program->id,
                 'transaction_id' => \Str::uuid(),
                 'donor_name' => $request->donor_name,
                 'donor_email' => $request->donor_email,
