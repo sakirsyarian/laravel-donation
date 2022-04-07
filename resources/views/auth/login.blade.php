@@ -102,11 +102,9 @@
         <div class="d-flex flex-center flex-column-auto p-10">
             <!--begin::Links-->
             <div class="d-flex align-items-center fw-bold fs-6">
-                <a href="https://www.generasiyatimtahfidz.org/" class="text-muted text-hover-primary px-2">Beranda</a>
-                <a href="https://www.generasiyatimtahfidz.org/about.php"
-                    class="text-muted text-hover-primary px-2">Tentang</a>
-                <a href="https://www.generasiyatimtahfidz.org/contact.php"
-                    class="text-muted text-hover-primary px-2">Kontak</a>
+                <a href="/" class="text-muted text-hover-primary px-2">Beranda</a>
+                <a href="/about" class="text-muted text-hover-primary px-2">Tentang</a>
+                <a href="/contact" class="text-muted text-hover-primary px-2">Kontak</a>
             </div>
             <!--end::Links-->
         </div>

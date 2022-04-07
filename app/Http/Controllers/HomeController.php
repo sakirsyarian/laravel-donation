@@ -11,6 +11,8 @@ use App\RefVendorSaving;
 use App\Rekening;
 use App\Donation;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,7 +33,34 @@ class HomeController extends Controller
         $programs = Program::orderBy('batas_akhir', 'ASC')->take(10)->get();
         $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
 
-        return view('pages.umum.home', compact('programs', 'blogs'));
+        return view('pages.umum.dashboard', compact('programs', 'blogs'));
+    }
+
+    public function home()
+    {
+        $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+        $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+        $title = 'Yayasan Generasi Yatim Tahfidz';
+
+        return view('pages.umum.home', compact('title', 'programs', 'blogs'));
+    }
+
+    public function about()
+    {
+        $title = 'Yayasan Generasi Yatim Tahfidz - Tentang';
+        return view('pages.umum.about', compact('title'));
+    }
+
+    public function gallery()
+    {
+        $title = 'Yayasan Generasi Yatim Tahfidz - Galeri';
+        return view('pages.umum.gallery', compact('title'));
+    }
+
+    public function contact()
+    {
+        $title = 'Yayasan Generasi Yatim Tahfidz - Kontak';
+        return view('pages.umum.contact', compact('title'));
     }
 
     public function show($id)

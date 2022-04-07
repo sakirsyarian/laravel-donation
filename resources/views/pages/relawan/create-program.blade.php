@@ -27,10 +27,10 @@
                             <div class="row g-9 py-5">
                                 <!--begin::Col-->
                                 <div class="col-md-6 fv-row">
-                                    <label for="tambah_nama_program" class=" required fs-6 fw-bold mb-2">Program</label>
+                                    <label for="tambah_nama_program" class="required fs-6 fw-bold mb-2">Program</label>
                                     <input type="text" class="form-control form-control-solid"
-                                        name="tambah_nama_program" id="tambah_nama_program"
-                                        placeholder="Tuliskan nama program">
+                                        name="tambah_nama_program" id="kt_docs_maxlength_basic" maxlength="50"
+                                        placeholder="Tuliskan nama program" required>
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
@@ -40,7 +40,7 @@
                                         <span class="input-group-text">Rp</span>
                                         <input type="number" class="form-control form-control-solid"
                                             name="tambah_target" id="tambah_target"
-                                            placeholder="Masukan budget yang ingin dicapai">
+                                            placeholder="Masukan budget yang ingin dicapai" required>
                                     </div>
                                 </div>
                                 <!--end::Col-->
@@ -53,7 +53,7 @@
                                 <div class="col-md-6 fv-row">
                                     <label class="required fs-6 fw-bold mb-2">Upload</label>
                                     <input type="file" class="form-control form-control-solid"
-                                        name="tambah_gambar_program" id="tambah_gambar_program">
+                                        name="tambah_gambar_program" id="tambah_gambar_program" required>
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
@@ -81,8 +81,8 @@
                                         <!--end::Icon-->
                                         <!--begin::Datepicker-->
                                         <input class="form-control form-control-solid ps-12"
-                                            placeholder="Masukan tanggal" name="tambah_batas_akhir"
-                                            id="kt_datepicker_1" />
+                                            placeholder="Masukan tanggal" name="tambah_batas_akhir" id="kt_datepicker_1"
+                                            required />
                                         <!--end::Datepicker-->
                                     </div>
                                     <!--end::Input-->
@@ -98,7 +98,7 @@
                                     <span class="required">Pesan</span>
                                 </label>
                                 <!--end::Label-->
-                                <textarea class="form-control form-control-solid" rows="3" id="tambah_info"
+                                <textarea class="form-control form-control-solid" rows="3" required id="tambah_info"
                                     name='tambah_info' placeholder="Masukan pesan yang ingin disampaikan..."></textarea>
                             </div>
                             <!--end::Textarea-->
@@ -121,16 +121,10 @@
 @stop
 
 @push('custom-scripts')
-<!-- <script>
-$(function() {
-    $("#tambah_batas_akhir").datepicker({
-        dateFormat: "yy-mm-dd",
-    });
-
-    $("#tambah_program").on("submit", function() {
-        var hvalue = $('.ql-editor').html();
-        $(this).append("<textarea name='tambah_info' style='display:none'>" + hvalue + "</textarea>");
-    });
+<script>
+$('#kt_docs_maxlength_basic').maxlength({
+    warningClass: "badge badge-warning",
+    limitReachedClass: "badge badge-danger"
 });
-</script> -->
+</script>
 @endpush

@@ -69,7 +69,7 @@
                                     <label for="edit_nama_program" class=" required fs-6 fw-bold mb-2">Program</label>
                                     <input type="text" class="form-control form-control-solid" name="edit_nama_program"
                                         id="edit_nama_program" placeholder="Tuliskan nama program"
-                                        value="{{$program->nama_program}}">
+                                        value="{{$program->nama_program}}" required>
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
@@ -79,7 +79,7 @@
                                         <span class="input-group-text">Rp</span>
                                         <input type="number" class="form-control form-control-solid" name="edit_target"
                                             id="edit_target" placeholder="Masukan sejumlah nominal"
-                                            value="{{$program->target}}">
+                                            value="{{$program->target}}" required>
                                     </div>
                                 </div>
                                 <!--end::Col-->
@@ -92,7 +92,7 @@
                                 <div class="col-md-6 fv-row">
                                     <label for="edit_gambar_program" class="required fs-6 fw-bold mb-2">Upload</label>
                                     <input type="file" class="form-control form-control-solid"
-                                        name="edit_gambar_program" id="edit_gambar_program">
+                                        name="edit_gambar_program" id="edit_gambar_program" required>
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
@@ -121,7 +121,7 @@
                                         <!--begin::Datepicker-->
                                         <input class="form-control form-control-solid ps-12"
                                             placeholder="Masukan tanggal" name="edit_batas_akhir" id="kt_datepicker_1"
-                                            value="{{$program->batas_akhir}}" />
+                                            value="{{$program->batas_akhir}}" required />
                                         <!--end::Datepicker-->
                                     </div>
                                     <!--end::Input-->
@@ -138,8 +138,8 @@
                                 </label>
                                 <!--end::Label-->
                                 <textarea class="form-control form-control-solid" rows="3" id="edit_info"
-                                    name='edit_info'
-                                    placeholder="Masukan pesan yang ingin disampaikan...">{!! $program->info !!}</textarea>
+                                    name='edit_info' placeholder="Masukan pesan yang ingin disampaikan..."
+                                    required>{!! $program->info !!}</textarea>
                             </div>
                             <!--end::Textarea-->
 

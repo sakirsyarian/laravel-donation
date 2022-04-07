@@ -15,13 +15,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Homepage (non-login)
-Route::get('/', 'HomeController@index')->name('homepage');
+Route::get('/', 'HomeController@home')->name('home');
 Route::get('/donasi/{id}', 'HomeController@show')->name('detail_donasi');
 // Route::post('/donasi/kirim/{id}', 'HomeController@kirimDonasi')->name('kirim_donasi');
 Route::get('/donasi/{id}/berita', 'HomeController@daftarBerita')->name('daftar_berita');
 Route::get('/donasi/{id}/berita/{berita}', 'HomeController@detailBerita')->name('detail_berita');
-
 Route::get('/blog/{id}', 'HomeController@detailBlog')->name('detail_blog');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/gallery', 'HomeController@gallery')->name('gallery');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 // Route auth
 Auth::routes();

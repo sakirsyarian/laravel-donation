@@ -6,7 +6,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="https://www.generasiyatimtahfidz.org/">
+        <a href="/">
             <img alt="Logo" src="{{ asset('logo/logo-sidebar.png') }}" class="h-25px logo" />
         </a>
         <!--end::Logo-->
@@ -56,12 +56,12 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Dashboards</span>
+                        <span class="menu-title">Dashboard</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="/">
+                            <a class="menu-link" href="/dashboard">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

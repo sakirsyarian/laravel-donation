@@ -65,7 +65,7 @@
                         @if(Auth::check())
                         {{Auth::user()->nama}}
                         @else
-                        Guest
+                        Donatur
                         @endif
                     </a>
                     <!--end::Theme mode docs-->
@@ -99,14 +99,14 @@
                                         @if(Auth::check())
                                         {{Auth::user()->nama}}
                                         @else
-                                        Guest
+                                        Donatur
                                         @endif
                                     </div>
                                     <a href="#" class="fw-bold text-muted text-hover-primary fs-7">
                                         @if(Auth::check())
                                         {{Auth::user()->email}}
                                         @else
-                                        guest@gmail.com
+                                        donatur@gmail.com
                                         @endif
                                     </a>
                                 </div>
