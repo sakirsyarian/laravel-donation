@@ -41,7 +41,7 @@
             <div class="col-lg-6">
                 <div class="about-image rmb-50">
                     <img class="wow fadeInBottomLeft" data-wow-duration="2s"
-                        src="{{ asset('assets/images/about/about.jpg') }}" alt="About Image">
+                        src="{{ asset('assets/images/about/about-ramadhan.png') }}" alt="About Image">
                     <div class="about-border"></div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
 <!--==================================================================== 
             Start Program Section
 =====================================================================-->
-<section class="services-section bg-snow pb-50 pt-150 rpt-90 rpb-60">
+<section class="services-section bg-ramadhan pb-50 pt-150 rpt-90 rpb-60">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8">
@@ -123,25 +123,44 @@
 
                         <h4><a href="{{ route('detail_donasi', $program->id) }}">{{ $program->nama_program }}</a></h4>
 
-                        <div class="progress progress-primary mb-4">
+                        <!-- <div class="progress progress-primary mb-4">
                             <div class="progress-bar progress-label" role="progressbar"
                                 style="width: <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>"
                                 aria-valuenow="{{ ceil(($program->jumlah_terkumpul / $program->target) * 100) }}"
                                 aria-valuemin="0" aria-valuemax="100" id="jmlKumpul">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="fs-6 fw-bolder mt-5 d-flex flex-stack justify-content-between">
+                        <!--begin::Progress-->
+                        <div class="d-flex align-items-center flex-column mb-20 w-100">
+                            <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                                <span class="fw-bolder fs-9">
+                                    <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>
+                                </span>
+                                <span class="fw-boldest fs-9">
+                                    {{ now()->diffInDays($program->batas_akhir, false) <= 0 ? 'Kedaluwarsa' : now()->diffInDays($program->batas_akhir, false) . " hari lagi" }}
+                                </span>
+                            </div>
+                            <div class="h-10px mx-3 w-100 bg-light-success rounded">
+                                <div class="bg-success rounded h-10px" role="progressbar"
+                                    style="width: <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>;"
+                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--end::Progress-->
+
+                        <div class="fs-6 fw-bolder my-20 d-flex flex-stack justify-content-between">
                             <!--begin::Label-->
-                            <span class="badge border border-dashed fs-2 fw-bolder text-dark p-2">
-                                <span class="fs-6 fw-bold text-gray-400 mr-2px">Rp &nbsp;</span>
-                                {{ " " . number_format($program->target, 0, ',' , '.') }}
+                            <span class="badge border border-dashed fs-8 fw-bolder p-2">
+                                <span class="fs-7 fw-bold text-gray-400 mr-2px">Rp &nbsp;</span>
+                                {{ " " . number_format($program->jumlah_terkumpul, 0, ',' , '.') }}
+                                dari {{ " " . number_format($program->target, 0, ',' , '.') }}
                             </span>
                             <!--end::Label-->
                             <!--begin::Action-->
-                            <span class="badge border border-dashed fs-2 fw-bolder text-dark p-2">
-                                {{ $program->batas_akhir }}
-                            </span>
+                            <!-- <span class="badge border border-dashed fs-2 fw-bolder p-2">
+                                {{ now()->diffInDays($program->batas_akhir, false) <= 0 ? 'Kedaluwarsa' : now()->diffInDays($program->batas_akhir, false) . " hari lagi" }}
+                            </span> -->
                             <!--end::Action-->
                         </div>
 
@@ -152,6 +171,7 @@
                             class="theme-btn dnt hd wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
                             <i class="fa-solid fa-box-heart"></i> Donasi sekarang
                         </a>
+                        
                     </div> -->
 
                 </div>
@@ -163,7 +183,7 @@
         <div class="btndonasi text-center py-100">
             <a id="donate" href="https://donation.generasiyatimtahfidz.org/" target="_blank"
                 class="theme-btn dnt hd wow fadeInUp py-10 px-10" data-wow-duration="1s" data-wow-delay="1s">
-                <i class="fa-solid fa-circle-ellipsis"></i> Lebih banyak kampanye
+                <i class="fa-solid fa-circle-ellipsis"></i> Lebih banyak program
             </a>
         </div>
     </div>
@@ -430,7 +450,7 @@
 <!--==================================================================== 
             Start Legalitas Section
 =====================================================================-->
-<section class="team-section pt-150 rpt-90 pb-150 rpb-40">
+<section class="team-section bg-pattern-ramadhan pt-150 rpt-90 pb-150 rpb-40">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-7 col-md-8">

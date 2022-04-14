@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $programs = Program::orderBy('batas_akhir', 'ASC')->take(10)->get();
+        $programs = Program::orderBy('id', 'DESC')->take(10)->get();
         $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
 
         return view('pages.umum.dashboard', compact('programs', 'blogs'));
@@ -38,29 +38,36 @@ class HomeController extends Controller
 
     public function home()
     {
-        $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+        $programs = Program::orderBy('id', 'DESC')->take(3)->get();
         $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
         $title = 'Yayasan Generasi Yatim Tahfidz';
+        $description = "Generasi yatim tahfidz merupakan yayasan yatim piatu atau lembaga sosial yang bersifat non-profit dan berfokus mencetak generasi tahfidz Al-Qur’an";
 
-        return view('pages.umum.home', compact('title', 'programs', 'blogs'));
+        return view('pages.umum.home', compact('title', 'description', 'programs', 'blogs'));
     }
 
     public function about()
     {
         $title = 'Yayasan Generasi Yatim Tahfidz - Tentang';
-        return view('pages.umum.about', compact('title'));
+        $description = "Generasi yatim tahfidz merupakan yayasan yatim piatu terdekat atau lembaga sosial yang bersifat non-profit dan berfokus mencetak generasi tahfidz Al-Qur’an";
+
+        return view('pages.umum.about', compact('title', 'description'));
     }
 
     public function gallery()
     {
         $title = 'Yayasan Generasi Yatim Tahfidz - Galeri';
-        return view('pages.umum.gallery', compact('title'));
+        $description = "Generasi yatim tahfidz merupakan panti asuhan terdekat atau lembaga sosial yang bersifat non-profit dan berfokus mencetak generasi tahfidz Al-Qur’an";
+
+        return view('pages.umum.gallery', compact('title', 'description'));
     }
 
     public function contact()
     {
         $title = 'Yayasan Generasi Yatim Tahfidz - Kontak';
-        return view('pages.umum.contact', compact('title'));
+        $description = "Generasi yatim tahfidz merupakan badan wakaf al quran atau lembaga sosial yang bersifat non-profit dan berfokus mencetak generasi tahfidz Al-Qur’an";
+
+        return view('pages.umum.contact', compact('title', 'description'));
     }
 
     public function show($id)

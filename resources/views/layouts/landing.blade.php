@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!--==================================================================== 
@@ -29,6 +29,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
+
+    <!--==================================================================== 
+                            Start Primary Meta Tags Section
+    =====================================================================-->
+    <meta name="title" content="{{ $title }}">
+    <meta name="description" content="{{ $description }}">
+    <meta name="keywords"
+        content="Yayasan Yatim Piatu, Yayasan Yatim Ziswaf, Yayasan Yatim Dhuafa, Rumah Yatim Dhuafa, Donasi Yatim Piatu, Dompet Dhuafa Zakat, Wakaf Dompet Dhuafa, Donasi Dompet Dhuafa, Yayasan Dompet Dhuafa, Sedekah Yatim Piatu, Yayasan Yatim Piatu Terdekat, Rumah Yatim Piatu, Badan Wakaf Alquran, Yayasan Dompet Yatim Indonesia, Panti Asuhan Terdekat, Pondok yatim dan dhuafa, Program Wakaf Al quran, Sedekah Online Terpercaya, Panti Asuhan Samarinda, Yayasan Panti Asuhan, Yayasan Panti Asuhan Terdekat, Panti Asuhan Pontianak" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://generasiyatimtahfidz.org/">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="assets/images/gallery/3.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://generasiyatimtahfidz.org/">
+    <meta property="twitter:title" content="{{ $title }}">
+    <meta property="twitter:description" content="{{ $description }}">
+    <meta property="twitter:image" content="assets/images/gallery/3.jpg">
+    <!--====================================================================
+                            End Primary Meta Tags Section
+    =====================================================================-->
 
     <!--==================================================================== 
                                 Start Stylesheet Section

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\KontenBlog;
+use App\Program;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,140 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+
+// alternative pages
+Route::get('/layanan-badan-wakaf-alquran-terbaik-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-badan-wakaf-alquran-terbaik-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-dompet-dhuafa-zakat-online-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-dompet-dhuafa-zakat-online-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-donasi-dompet-dhuafa-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-donasi-dompet-dhuafa-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-donasi-yatim-piatu-dhuafa-terpercaya-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-donasi-yatim-piatu-dhuafa-terpercaya-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-jasa-wakaf-dompet-dhuafa-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-jasa-wakaf-dompet-dhuafa-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-program-wakaf-alquran-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-program-wakaf-alquran-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-sedekah-online-terpercaya-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-sedekah-online-terpercaya-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/layanan-sedekah-yatim-piatu-amanah-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.layanan-sedekah-yatim-piatu-amanah-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-panti-asuhan-pontianak-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-panti-asuhan-pontianak-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-panti-asuhan-terdekat-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-panti-asuhan-terdekat-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-pondok-yatim-dan-dhuafa-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-pondok-yatim-dan-dhuafa-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-dompet-dhuafa-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-dompet-dhuafa-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-dompet-yatim-indonesia-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-dompet-yatim-indonesia-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-panti-asuhan-terdekat-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-panti-asuhan-terdekat-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-panti-asuhan-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-panti-asuhan-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-yatim-dhuafa-terpercaya-transparan', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-yatim-dhuafa-terpercaya-transparan', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-yatim-piatu-terdekat-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-yatim-piatu-terdekat-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-yatim-piatu-terpercaya-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-yatim-piatu-terpercaya-amanah', compact('title', 'programs', 'blogs'));
+});
+Route::get('/rumah-yayasan-yatim-ziswaf-amanah-terbaik', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.rumah-yayasan-yatim-ziswaf-amanah-terbaik', compact('title', 'programs', 'blogs'));
+});
+Route::get('/yayasan-panti-asuhan-samarinda-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.yayasan-panti-asuhan-samarinda-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/yayasan-rumah-yatim-dhuafa-tahfidz-terpercaya', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.yayasan-rumah-yatim-dhuafa-tahfidz-terpercaya', compact('title', 'programs', 'blogs'));
+});
+Route::get('/yayasan-rumah-yatim-piatu-terpercaya-amanah', function () {
+    $programs = Program::orderBy('batas_akhir', 'ASC')->take(3)->get();
+    $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
+    $title = 'Yayasan Generasi Yatim Tahfidz';
+    return view('alternative.yayasan-rumah-yatim-piatu-terpercaya-amanah', compact('title', 'programs', 'blogs'));
+});
 
 // Route auth
 Auth::routes();

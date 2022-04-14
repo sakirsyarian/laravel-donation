@@ -39,8 +39,8 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-image rmb-50">
-                    <img class="wow fadeInBottomLeft" data-wow-duration="2s" src="assets/images/about/about.jpg"
-                        alt="About Image">
+                    <img class="wow fadeInBottomLeft" data-wow-duration="2s"
+                        src="{{ asset('assets/images/about/about-ramadhan.png') }}" alt="About Image">
                     <div class="about-border"></div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
 <!--==================================================================== 
             Start Vission Mission Section
 =====================================================================-->
-<section class="vission-mission py-150 rpy-100">
+<section class="vission-mission bg-pattern-ramadhan py-150 rpy-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -184,7 +184,7 @@
     <div class="team-wrap">
         <div class="team-item wow fadeInUp" data-wow-duration="2s">
             <div class="item-image">
-                <img src="assets/images/cases/case-details1.png" alt="Team Image">
+                <img src="{{ asset('assets/images/cases/case-details1.png') }}" alt="Team Image">
             </div>
             <div class="team-desc">
                 <h4>SK Kemenkumham</h4>
@@ -192,7 +192,7 @@
         </div>
         <div class="team-item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="item-image">
-                <img src="assets/images/cases/case-details2.png" alt="Team Image">
+                <img src="{{ asset('assets/images/cases/case-details2.png') }}" alt="Team Image">
             </div>
             <div class="team-desc">
                 <h4>Akta Pendirian Yayasan</h4>
@@ -223,7 +223,7 @@
     <div class="team-wrap">
         <div class="team-item wow fadeInUp" data-wow-duration="2s">
             <div class="item-image">
-                <img src="assets/images/team/2.png" alt="Team Image">
+                <img src="{{ asset('assets/images/team/2.png') }}" alt="Team Image">
                 <!-- <div class="social-style-two">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-skype"></i></a>
@@ -238,7 +238,7 @@
         </div>
         <div class="team-item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="item-image">
-                <img src="assets/images/team/1.png" alt="Team Image">
+                <img src="{{ asset('assets/images/team/1.png') }}" alt="Team Image">
                 <!-- <div class="social-style-two">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-skype"></i></a>
@@ -253,7 +253,7 @@
         </div>
         <div class="team-item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s">
             <div class="item-image">
-                <img src="assets/images/team/3.png" alt="Team Image">
+                <img src="{{ asset('assets/images/team/3.png') }}" alt="Team Image">
                 <!-- <div class="social-style-two">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-skype"></i></a>
@@ -268,7 +268,7 @@
         </div>
         <div class="team-item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.7s">
             <div class="item-image">
-                <img src="assets/images/team/5.png" alt="Team Image">
+                <img src="{{ asset('assets/images/team/5.png') }}" alt="Team Image">
                 <!-- <div class="social-style-two">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-skype"></i></a>
@@ -283,7 +283,7 @@
         </div>
         <div class="team-item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
             <div class="item-image">
-                <img src="assets/images/team/4.png" alt="Team Image">
+                <img src="{{ asset('assets/images/team/4.png') }}" alt="Team Image">
                 <!-- <div class="social-style-two">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-skype"></i></a>

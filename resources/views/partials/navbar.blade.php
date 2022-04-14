@@ -16,6 +16,8 @@
                                 class="fab fa-instagram"></i></a>
                         <a target="_blank" href="https://api.whatsapp.com/send?phone=6285828112032"><i
                                 class="fab fa-whatsapp"></i></a>
+                        <span class="text-white">|</span>
+                        <a href="/login" class="text-white bg-transparent">Login</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
                                 <li><a href="/">BERANDA</a></li>
-                                <li><a href="https://donation.generasiyatimtahfidz.org/">KAMPANYE</a></li>
+                                <li><a href="/dashboard">PROGRAM</a></li>
                                 <li><a href="/about">TENTANG</a></li>
                                 <li><a href="/gallery">GALERI</a></li>
                                 <li><a href="/contact">KONTAK</a></li>

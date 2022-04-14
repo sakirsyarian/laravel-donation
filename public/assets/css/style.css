@@ -49,6 +49,8 @@
   --secondary-color: #48824e;
   --tertiary-color: #fc2f2d;
   --primary-color-rgb: 254, 102, 0;
+  --bs-success: #50cd89;
+  --bs-success-rgb: 80, 205, 137;
 }
 
 body {
@@ -432,6 +434,22 @@ input[type="submit"]:focus {
   background: #f9f9f9;
 }
 
+.bg-ramadhan {
+  background: #f9f9f9;
+  background-image: url(../images/hero/background-ramadhan.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-pattern-ramadhan {
+  background: #f9f9f9;
+  background-image: url(../images/hero/pattern-ramadhan.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .bg-snow-hadist {
   background: #edf5ff;
 }
@@ -445,7 +463,7 @@ input[type="submit"]:focus {
 .hero-section {
   height: 1000px;
   margin-top: 120px;
-  background: url(../images/hero/hero-bg.jpg);
+  background: url(../images/hero/hero-ramadhan.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -465,7 +483,7 @@ input[type="submit"]:focus {
 }
 
 .hero-inner h1 {
-  color: #fff;
+  color: var(--heading-color, #2d2d2d);
   margin: 35px 0 45px;
   line-height: 1.1;
 }
@@ -496,7 +514,7 @@ input[type="submit"]:focus {
 .page-banner {
   /* height: 520px; */
   margin-top: 120px;
-  background: url(../images/banner/banner-bg.png);
+  background: url(../images/banner/banner-ramadhan.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -772,7 +790,7 @@ input[type="submit"]:focus {
 .service-content h4 {
   font-size: 20px;
   line-height: 30px;
-  margin-bottom: 15px;
+  /* margin-bottom: 10px; */
   height: 60px;
 }
 
@@ -2811,6 +2829,60 @@ input[type="submit"]:focus {
   z-index: 99999 !important;
 }
 
-/* #donate {
-  display: inline-block;
-} */
+/* progress bar  */
+.h-8px {
+  height: 8px !important;
+}
+
+.h-10px {
+  height: 10px !important;
+}
+
+.h-15px {
+  height: 15px !important;
+}
+
+.fs-6 {
+  font-size: 1.075rem !important;
+}
+
+.fs-7 {
+  font-size: 0.95rem !important;
+}
+
+.fs-8 {
+  font-size: 0.85rem !important;
+}
+
+.fs-9 {
+  font-size: 0.75rem !important;
+}
+
+.fs-10 {
+  font-size: 0.5rem !important;
+}
+
+.fw-bolder {
+  font-weight: 600 !important;
+}
+
+.fw-boldest {
+  font-weight: 700 !important;
+}
+
+.text-gray-400 {
+  color: #b5b5c3 !important;
+}
+
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important
+}
+
+.bg-light-success {
+  background-color: #fff !important;
+}
+
+.bg-light-success.hoverable:hover {
+  background-color: #c9ffe3 !important;
+}

@@ -92,7 +92,7 @@
                                 <div class="col-md-6 fv-row">
                                     <label for="edit_gambar_program" class="required fs-6 fw-bold mb-2">Upload</label>
                                     <input type="file" class="form-control form-control-solid"
-                                        name="edit_gambar_program" id="edit_gambar_program" required>
+                                        name="edit_gambar_program" id="edit_gambar_program">
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->

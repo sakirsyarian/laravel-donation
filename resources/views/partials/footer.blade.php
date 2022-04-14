@@ -28,8 +28,8 @@
                 <div class="widget menu-widget">
                     <h3 class="widget-title">Navigasi</h3>
                     <ul>
-                        <li><a href="/home">Beranda</a></li>
-                        <li><a href="/about">Kampanye</a></li>
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="/dashboard">Program</a></li>
                         <li><a href="/about">Tentang</a></li>
                         <li><a href="/gallery">Galeri</a></li>
                         <li><a href="/contact">Kontak</a></li>

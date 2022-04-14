@@ -24,7 +24,7 @@
 <!--==================================================================== 
             Start Portfolio Section
 =====================================================================-->
-<section class="block py-150 rpy-100">
+<section class="block py-150 rpy-100 bg-ramadhan">
     <div class="wpo-portfolio-section-s3 tb-padding section-padding">
         <div class="container">
             <div class="sortable-gallery">
@@ -34,99 +34,10 @@
 
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/images/gallery/1.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/1.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/2.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/2.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/3.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/3.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/4.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/4.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/5.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/5.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/6.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/6.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/7.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/7.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/8.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/8.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/9.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/9.jpg" alt class="img img-responsive">
-                                        <div class="hover-content">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <a href="assets/images/gallery/10.jpg" class="fancybox"
+                                    <a href="{{ asset('assets/images/gallery/1.jpg') }}" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/10.jpg" alt class="img img-responsive">
+                                        <img src="{{ asset('assets/images/gallery/1.jpg') }}" alt
+                                            class="img img-responsive">
                                         <div class="hover-content">
                                             <i class="ti-plus"></i>
                                         </div>
@@ -135,9 +46,10 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/images/gallery/11.jpg" class="fancybox"
+                                    <a href="{{ asset('assets/images/gallery/2.jpg') }}" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/11.jpg" alt class="img img-responsive">
+                                        <img src="{{ asset('assets/images/gallery/2.jpg') }}" alt
+                                            class="img img-responsive">
                                         <div class="hover-content">
                                             <i class="ti-plus"></i>
                                         </div>
@@ -146,9 +58,118 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/images/gallery/12.jpg" class="fancybox"
+                                    <a href="{{ asset('assets/images/gallery/3.jpg') }}" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/images/gallery/12.jpg" alt class="img img-responsive">
+                                        <img src="{{ asset('assets/images/gallery/3.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/4.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/4.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/5.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/5.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/6.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/6.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/7.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/7.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/8.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/8.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/9.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/9.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/10.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/10.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/11.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/11.jpg') }}" alt
+                                            class="img img-responsive">
+                                        <div class="hover-content">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <a href="{{ asset('assets/images/gallery/12.jpg') }}" class="fancybox"
+                                        data-fancybox-group="gall-1">
+                                        <img src="{{ asset('assets/images/gallery/12.jpg') }}" alt
+                                            class="img img-responsive">
                                         <div class="hover-content">
                                             <i class="ti-plus"></i>
                                         </div>
