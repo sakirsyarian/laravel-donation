@@ -42,18 +42,24 @@
                                     <div class="col-md-6">
                                         <table class="table table-striped" id="programs">
                                             <tbody>
-                                                <tr>
+                                                <!-- <tr>
                                                     <th width="40%">Id</th>
                                                     <td>{{$program->id}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="40%">User</th>
                                                     <td>{{$program->userProgram->nama}}</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <th width="40%">Target</th>
                                                     <td>Rp
                                                         {{ " " . number_format($program->target, 0, ',' , '.') }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="40%">Terkumpul</th>
+                                                    <td>Rp
+                                                        {{ " " . number_format($program->jumlah_terkumpul, 0, ',' , '.') }}
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -63,6 +69,11 @@
                                                 <tr>
                                                     <th width="40%">Batas akhir</th>
                                                     <td>{{ $program->batas_akhir }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="40%">Status</th>
+                                                    <td>{{ $program->batas_akhir <= now()->format('Y-m-d') ? 'Kedaluwarsa' : 'Aktif' }}
+                                                    </td>
                                                 </tr>
                                                 <!-- <tr>
                                                     <th width="40%">Fundraiser</th>
@@ -251,7 +262,7 @@
                     <!--end::Textarea-->
 
                     <button type="submit"
-                        class="btn btn-primary ml-1 my-15 {{ $program->batas_akhir == now()->format('Y-m-d') || $program->jumlah_terkumpul >= $program->target ? 'd-none' : '' }}">
+                        class="btn btn-primary ml-1 my-15 {{ $program->batas_akhir <= now()->format('Y-m-d') || $program->jumlah_terkumpul >= $program->target ? 'd-none' : '' }}">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Donasi sekarang</span>
                     </button>

@@ -144,7 +144,7 @@
                                 <!--end::Label-->
                                 <!--begin::Action-->
                                 <a href="{{ route('detail_donasi', $program->id) }}"
-                                    class="btn btn-sm btn-primary  {{ $program->batas_akhir == now()->format('Y-m-d') || $program->jumlah_terkumpul >= $program->target ? 'd-none' : '' }}">Donasi</a>
+                                    class="btn btn-sm btn-primary  {{ $program->batas_akhir <= now()->format('Y-m-d') || $program->jumlah_terkumpul >= $program->target ? 'd-none' : '' }}">Donasi</a>
                                 <!--end::Action-->
                             </div>
                             <!--end::Text-->
@@ -157,8 +157,20 @@
                 <!--end::Col-->
             </div>
             <!--end::Row-->
+
         </div>
         <!--end::Section-->
+
+        <ul class="pagination">
+            <li class="page-item previous disabled"><a href="#" class="page-link"><i class="previous"></i></a></li>
+            <li class="page-item "><a href="#" class="page-link">1</a></li>
+            <li class="page-item active"><a href="#" class="page-link">2</a></li>
+            <li class="page-item "><a href="#" class="page-link">3</a></li>
+            <li class="page-item "><a href="#" class="page-link">4</a></li>
+            <li class="page-item "><a href="#" class="page-link">5</a></li>
+            <li class="page-item "><a href="#" class="page-link">6</a></li>
+            <li class="page-item next"><a href="#" class="page-link"><i class="next"></i></a></li>
+        </ul>
 
     </div>
     <!--end::Container-->

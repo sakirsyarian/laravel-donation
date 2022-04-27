@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $programs = Program::orderBy('id', 'DESC')->take(10)->get();
+        $programs = Program::orderBy('id', 'DESC')->take(9)->get();
         $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
 
         return view('pages.umum.dashboard', compact('programs', 'blogs'));
@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function home()
     {
-        $programs = Program::orderBy('id', 'DESC')->take(3)->get();
+        $programs = Program::orderBy('id', 'DESC')->take(6)->get();
         $blogs = KontenBlog::orderBy('inserted_at', 'DESC')->take(10)->get();
         $title = 'Yayasan Generasi Yatim Tahfidz';
         $description = "Generasi yatim tahfidz merupakan yayasan yatim piatu atau lembaga sosial yang bersifat non-profit dan berfokus mencetak generasi tahfidz Al-Qur’an";

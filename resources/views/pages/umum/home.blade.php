@@ -112,71 +112,72 @@
         </div>
         <div class="row">
 
-            @foreach ($programs as $program)
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-duration="2s">
-                    <div class="service-icon d-flex">
-                        <img src="{{ asset('/storage/images/program/'.$program->gambarProgram->nama) }}" alt="image">
-                    </div>
-
-                    <div class="service-content">
-
-                        <h4><a href="{{ route('detail_donasi', $program->id) }}">{{ $program->nama_program }}</a></h4>
-
-                        <!-- <div class="progress progress-primary mb-4">
-                            <div class="progress-bar progress-label" role="progressbar"
-                                style="width: <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>"
-                                aria-valuenow="{{ ceil(($program->jumlah_terkumpul / $program->target) * 100) }}"
-                                aria-valuemin="0" aria-valuemax="100" id="jmlKumpul">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach ($programs as $program)
+                    <div class="swiper-slide col-lg-4 col-md-6">
+                        <div class="service-item wow fadeInUp" data-wow-duration="2s">
+                            <div class="service-icon d-flex">
+                                <img src="{{ asset('/storage/images/program/'.$program->gambarProgram->nama) }}"
+                                    alt="image">
                             </div>
-                        </div> -->
 
-                        <!--begin::Progress-->
-                        <div class="d-flex align-items-center flex-column mb-20 w-100">
-                            <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-                                <span class="fw-bolder fs-9">
-                                    <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>
-                                </span>
-                                <span class="fw-boldest fs-9">
-                                    {{ now()->diffInDays($program->batas_akhir, false) <= 0 ? 'Kedaluwarsa' : now()->diffInDays($program->batas_akhir, false) . " hari lagi" }}
-                                </span>
+                            <div class="service-content">
+
+                                <h4>
+                                    <a href="{{ route('detail_donasi', $program->id) }}">{{$program->nama_program}}</a>
+                                </h4>
+
+                                <!--begin::Progress-->
+                                <div class="d-flex align-items-center flex-column mb-20 w-100">
+                                    <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                                        <span class="fw-bolder fs-9">
+                                            <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>
+                                        </span>
+                                        <span class="fw-boldest fs-9">
+                                            {{ now()->diffInDays($program->batas_akhir, false) <= 0 ? 'Kedaluwarsa' : now()->diffInDays($program->batas_akhir, false) . " hari lagi" }}
+                                        </span>
+                                    </div>
+                                    <div class="h-10px mx-3 w-100 bg-light-success rounded">
+                                        <div class="bg-success rounded h-10px" role="progressbar"
+                                            style="width: <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>;"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <!--end::Progress-->
+
+                                <div class="fs-6 fw-bolder my-20 d-flex flex-stack justify-content-between">
+                                    <!--begin::Label-->
+                                    <span class="badge border border-dashed fs-8 fw-bolder p-2">
+                                        <span class="fs-7 fw-bold text-gray-400 mr-2px">Rp &nbsp;</span>
+                                        {{ " " . number_format($program->jumlah_terkumpul, 0, ',' , '.') }}
+                                        dari {{ " " . number_format($program->target, 0, ',' , '.') }}
+                                    </span>
+                                    <!--end::Label-->
+
+                                    <!--begin::Action-->
+                                    <!-- <span class="badge border border-dashed fs-2 fw-bolder p-2"></span> -->
+                                    <!--end::Action-->
+                                </div>
+
                             </div>
-                            <div class="h-10px mx-3 w-100 bg-light-success rounded">
-                                <div class="bg-success rounded h-10px" role="progressbar"
-                                    style="width: <?= ceil(($program->jumlah_terkumpul / $program->target) * 100) . '%' ?>;"
-                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+
+                            <!-- <div class="btndonasi">
+                                <a id="donate" href="{{ route('detail_donasi', $program->id) }}"
+                                    class="theme-btn dnt hd wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+                                    <i class="fa-solid fa-box-heart"></i> Donasi sekarang
+                                </a>
+                            </div> -->
+
                         </div>
-                        <!--end::Progress-->
-
-                        <div class="fs-6 fw-bolder my-20 d-flex flex-stack justify-content-between">
-                            <!--begin::Label-->
-                            <span class="badge border border-dashed fs-8 fw-bolder p-2">
-                                <span class="fs-7 fw-bold text-gray-400 mr-2px">Rp &nbsp;</span>
-                                {{ " " . number_format($program->jumlah_terkumpul, 0, ',' , '.') }}
-                                dari {{ " " . number_format($program->target, 0, ',' , '.') }}
-                            </span>
-                            <!--end::Label-->
-                            <!--begin::Action-->
-                            <!-- <span class="badge border border-dashed fs-2 fw-bolder p-2">
-                                {{ now()->diffInDays($program->batas_akhir, false) <= 0 ? 'Kedaluwarsa' : now()->diffInDays($program->batas_akhir, false) . " hari lagi" }}
-                            </span> -->
-                            <!--end::Action-->
-                        </div>
-
                     </div>
-
-                    <!-- <div class="btndonasi">
-                        <a id="donate" href="{{ route('detail_donasi', $program->id) }}"
-                            class="theme-btn dnt hd wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-                            <i class="fa-solid fa-box-heart"></i> Donasi sekarang
-                        </a>
-                        
-                    </div> -->
+                    @endforeach
 
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
-            @endforeach
+
             <div class="separetor wow fadeInUp" data-wow-duration="2s"></div>
 
         </div>

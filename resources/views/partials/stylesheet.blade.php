@@ -23,6 +23,7 @@
     href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css" />
 <link rel="stylesheet" href="https://kinasihwedding.com/assets/css/loveme/jquery.fancybox.css">
 <!-- Main Style CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.2') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.3') }}">
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <!-- Responsive CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/responsive.css?v=1.0') }}">
