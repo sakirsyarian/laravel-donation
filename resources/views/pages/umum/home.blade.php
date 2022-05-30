@@ -182,8 +182,8 @@
 
         </div>
         <div class="btndonasi text-center py-100">
-            <a id="donate" href="https://donation.generasiyatimtahfidz.org/" target="_blank"
-                class="theme-btn dnt hd wow fadeInUp py-10 px-10" data-wow-duration="1s" data-wow-delay="1s">
+            <a id="donate" href="/dashboard" target="_blank" class="theme-btn dnt hd wow fadeInUp py-10 px-10"
+                data-wow-duration="1s" data-wow-delay="1s">
                 <i class="fa-solid fa-circle-ellipsis"></i> Lebih banyak program
             </a>
         </div>
